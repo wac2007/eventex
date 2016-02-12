@@ -342,7 +342,6 @@ section header h2 {
         top: 0;
         z-index: -1;
     }
-
 }
 
 .alert {
@@ -358,5 +357,12 @@ section header h2 {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d0e9c6;
+}
+.speakers h2 {
+    text-transform: uppercase;
+}
+.speakers img {
+    width: 200px;
+    border-radius: 100%;
 }
 /* Fim Customização */
