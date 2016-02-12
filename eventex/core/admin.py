@@ -1,16 +1,16 @@
 from django.contrib import admin
 
 # Register your models here.
-from eventex.core.models import Speaker, Contact
+from eventex.core.models import Speaker, Contact, Talk
 
 
-class ContactInline(admin.TabularInline):
+class ContactInline(admin.TabularInline): #Criando a lista de contatos
     model = Contact
-    extra = 1
+    extra = 1 #Quantidade de registros em branco
 
 
 class SpeakerModelAdmin(admin.ModelAdmin):
-    inlines = [ContactInline]
+    inlines = [ContactInline] # Assimilando a tabela de contato
     prepopulated_fields = {'slug': ('name',)}
     list_display = ['name', 'photo_img', 'website_link']
 
@@ -27,3 +27,4 @@ class SpeakerModelAdmin(admin.ModelAdmin):
     photo_img.short_description = 'Foto'
 
 admin.site.register(Speaker, SpeakerModelAdmin)
+admin.site.register(Talk)
