@@ -16,4 +16,8 @@ class PeriodManager(models.Manager):
         return self.filter(start__lt=self.MIDDAY)
 
     def at_afternoon(self):
+        """
+
+        :rtype: object
+        """
         return self.filter(start__gte=self.MIDDAY)

@@ -43,7 +43,14 @@ class SpeakerModelAdmin(admin.ModelAdmin):
     # ----------------------------------------------------------
     # ----------------------------------------------------------
 
+
+class TalkModelAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.filter(course=None)
+
+
 # Register in admin
 admin.site.register(Speaker, SpeakerModelAdmin)
-admin.site.register(Talk)
+admin.site.register(Talk, TalkModelAdmin)
 admin.site.register(Course)
